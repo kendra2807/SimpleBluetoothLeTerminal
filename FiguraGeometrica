@@ -1,0 +1,110 @@
+class FiguraGeometrica {
+  protected:
+    int           base;
+    int           altura;
+    char          direccion;
+    VehiculoMovil iCar;
+  
+  public:
+          FiguraGeometrica();
+          FiguraGeometrica(byte MAS1, byte MAS2, byte MBS1, byte MBS2);
+    void  Config(byte MAS1, byte MAS2, byte MBS1, byte MBS2);
+    int   getBase();
+    void  setBase(int base);
+    int   getAltura();
+    void  setAltura(int altura);
+    char  getDireccion();
+    void  setDireccion(int direccion);
+    void  Cuadrado(char direccion, int base);
+    void  CuadradoDirecto(int base);
+    void  CuadradoInverso(int base);
+    void  Rectangulo(char direccion, int base, int altura);
+    void  RectanguloDirecto(int base, int altura);
+    void  RectanguloInverso(int base, int altura);
+    void  Triangulo(char direccion, int base, int altura);
+    void  TrianguloDirecto(int base, int altura);
+    void  TrianguloInverso(int base, int altura);
+    void  CambiarDireccion(char direccion, int distancia);
+    void  Girar(char direccion, int angulo);
+    const VehiculoMovil &_VehiculoMovil();
+};
+
+      FiguraGeometrica::FiguraGeometrica() {
+        this->base = 0;
+        this->altura = 0;
+        this->direccion = ' ';
+      }
+
+      FiguraGeometrica::FiguraGeometrica(byte MAS1, byte MAS2, byte MBS1, byte MBS2) {
+        this->base = 0;
+        this->altura = 0;
+        this->direccion = ' ';
+        this->iCar = VehiculoMovil(MAS1, MAS2, MBS1, MBS2);
+      }
+
+void  FiguraGeometrica::Config(byte MAS1, byte MAS2, byte MBS1, byte MBS2) {
+  this->iCar.Config(MAS1,MAS2,MBS1,MBS2);
+}
+
+int   FiguraGeometrica::getBase() { 
+  return this->base;
+}
+
+void  FiguraGeometrica::setBase(int base) {
+   this->base = base;
+}
+
+int   FiguraGeometrica::getAltura() { 
+  return this->altura;
+}
+
+void  FiguraGeometrica::setAltura(int altura) { 
+  this->altura = altura;
+}
+
+char  FiguraGeometrica::getDireccion() {
+  return this->direccion;
+}
+
+void  FiguraGeometrica::setDireccion(int direccion) { 
+  this->direccion = direccion;
+}
+
+void  FiguraGeometrica::Cuadrado(char direccion, int base) {
+}
+
+void  FiguraGeometrica::CuadradoDirecto(int base) {
+}
+
+void  FiguraGeometrica::CuadradoInverso(int base) {
+}
+
+void  FiguraGeometrica::Rectangulo(char direccion, int base, int altura) {
+}
+
+void  FiguraGeometrica::RectanguloDirecto(int base, int altura) {
+}
+
+void  FiguraGeometrica::RectanguloInverso(int base, int altura) {
+}
+
+void  FiguraGeometrica::Triangulo(char direccion, int base, int altura) {
+}
+
+void  FiguraGeometrica::TrianguloDirecto(int base, int altura) {
+}
+
+void  FiguraGeometrica::TrianguloInverso(int base, int altura) {
+}
+
+void  FiguraGeometrica::CambiarDireccion(char direccion, int distancia) {
+  iCar.CambiarDireccion(direccion, distancia);
+}
+
+void  FiguraGeometrica::Girar(char direccion, int angulo) {
+  iCar.Girar(direccion, angulo);
+}
+
+const VehiculoMovil &FiguraGeometrica::_VehiculoMovil() {
+  return this->iCar;
+}
